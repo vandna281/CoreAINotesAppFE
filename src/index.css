@@ -1,0 +1,244 @@
+/* src/index.css */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    color: #333;
+  }
+ /* Container to hold both form and notes list */
+.notes-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 30px; /* Add gap between the form and notes list */
+  }
+  
+  /* Styling for the form container (left side) */
+  .form-container {
+    width: 40%;
+    background-color: #f0f4f8; /* Light background for the form */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 100%; /* Ensure full height */
+  }
+  
+  .form-container h2 {
+    color: #333;
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+  }
+  
+  /* Styling for the form input elements */
+  input, textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+  }
+  
+  /* Styling for the note title */
+  input[type="text"] {
+    font-size: 1.2rem;
+  }
+  
+  /* Styling for the submit button */
+  button[type="submit"] {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Styling for the notes list container (right side) */
+  .notes-list {
+    width: 60%;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Notes list items styling */
+  .note-item {
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+  }
+  
+  .note-item h3 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+  
+  .note-item p {
+    margin: 10px 0;
+    font-size: 1rem;
+  }
+   
+  /* Buttons inside each note */
+  .buttons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .buttons button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .buttons button:hover {
+    background-color: #218838;
+  }
+  
+  .buttons button:nth-child(2) {
+    background-color: #dc3545;
+  }
+  
+  .buttons button:nth-child(2):hover {
+    background-color: #c82333;
+  }
+  
+  /* Basic responsiveness */
+  @media (max-width: 768px) {
+    .notes-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .form-container, .notes-list {
+      width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+/* Styling for the dropdown select */
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    background-color: #ffffff;
+  }
+  /* Modal Background */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);  /* Dark background with transparency */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 60%;
+  max-width: 700px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+button.close-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: red;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button.close-button:hover {
+  background-color: darkred;
+}
+
+/* Styling for Notes List */
+.notes-list {
+  margin-top: 20px;
+}
+
+.note-item {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  padding: 8px 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #4CAF50;
+  color: white;
+}
+.search-container {
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.search-container input {
+  padding: 10px;
+  width: 100%;
+  max-width: 400px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+}
+
+.search-container input:focus {
+  border-color: #4CAF50;
+  outline: none;
+}
+
+.note-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.note-category {
+  background-color: #e3f2fd; /* Light blue background */
+  color: #1565c0; /* Blue text */
+  font-size: 12px;
+  font-weight: bold;
+  padding: 4px 8px;
+  border-radius: 12px;
+  margin-left: 8px; /* Spacing between title and category */
+  display: inline-block;
+}
+
+ 
